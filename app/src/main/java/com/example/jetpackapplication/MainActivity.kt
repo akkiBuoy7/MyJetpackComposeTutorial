@@ -48,7 +48,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PreviewItemWithLazyColumn()
+            //BuildUi()
+            BuildScreen()
+            //PreviewItemWithLazyColumn()
 //            Sayhello(txt = "Hello World!")
             //ShowTextInput()
         }
@@ -83,7 +85,13 @@ fun PreviewFunction() {
 @Composable
 fun ShowModifier(){
     Image(painter = painterResource(id = R.drawable.india), contentDescription ="", alignment = Alignment.Center,
-        modifier = Modifier.width(300.dp).height(300.dp).padding(7.dp).clip(CircleShape).border(10.dp, Color.Red).fillMaxSize())
+        modifier = Modifier
+            .width(300.dp)
+            .height(300.dp)
+            .padding(7.dp)
+            .clip(CircleShape)
+            .border(10.dp, Color.Red)
+            .fillMaxSize())
 }
 
 @Composable
