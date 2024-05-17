@@ -1,4 +1,4 @@
-package com.example.jetpackapplication
+package com.example.jetpackapplication.basics
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
