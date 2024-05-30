@@ -14,10 +14,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -26,6 +27,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -39,7 +41,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.jetpackapplication.basics.BuildScreen
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -48,7 +49,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            App()
+            //App()
+            Counter()
             //BuildUi()
             //BuildScreen()
             //PreviewItemWithLazyColumn()
@@ -97,6 +99,46 @@ fun App() {
 
         }
     }
+}
+
+@Composable
+fun Counter() {
+    val data = remember {
+        mutableStateOf(listOf<String>())
+    }
+    val counter = remember {
+        mutableStateOf(3)
+    }
+
+    val key = counter.value % 3 == 0
+//    var isToggled by remember {
+//        mutableStateOf(false)
+//    }
+
+    Log.d(TAG, "Key value: $key")
+    LaunchedEffect(key1 = key) {
+        val fetchedData = fetchData()
+        data.value = fetchedData
+        Log.d(TAG, "Fetching List: ${data.toString()}")
+    }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(content = {
+            Log.d(TAG, "Counter: ${data.toString()}")
+            items(data.value) {
+                Text(text = it)
+            }
+        })
+        Button(onClick = {
+            counter.value++
+        }) {
+            Text(text = "Fetch Data ${counter.value}")
+        }
+    }
+}
+
+suspend fun fetchData(): List<String> {
+    return listOf("3", "6", "9", "12", "15", "18")
 }
 
 //@Preview(showSystemUi = true)
