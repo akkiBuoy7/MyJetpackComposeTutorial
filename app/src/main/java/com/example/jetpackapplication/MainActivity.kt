@@ -10,14 +10,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
@@ -35,6 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.BuildScreen
+import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
 
@@ -42,11 +47,46 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            App()
             //BuildUi()
-            BuildScreen()
+            //BuildScreen()
             //PreviewItemWithLazyColumn()
-//            Sayhello(txt = "Hello World!")    
+        // SayHello(txt = "Hello World!")
             //ShowTextInput()
+        }
+    }
+}
+
+@Composable
+fun App() {
+    JetpackApplicationTheme {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center,
+        ) {
+            Card(
+                modifier = Modifier
+                    .height(200.dp)
+                    .width(200.dp)
+                    .align(Alignment.Center), backgroundColor = Color.White
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = "HELLO WORLD!", style = MaterialTheme.typography.body2
+                    )
+                    Spacer(modifier = Modifier.padding(10.dp))
+                    Button(onClick = {
+
+                    }) {
+                        Text(
+                            text = "Change Theme", style = MaterialTheme.typography.body1
+                        )
+                    }
+                }
+            }
+
         }
     }
 }
@@ -54,7 +94,7 @@ class MainActivity : ComponentActivity() {
 //@Preview(showSystemUi = true)
 //@Composable
 //fun PreviewFunctionText() {
-//    Sayhello(txt = "Hello akash")
+//    SayHello(txt = "Hello akash")
 //}
 
 //@Preview(showSystemUi = true)
@@ -77,20 +117,24 @@ fun PreviewFunction() {
 }
 
 @Composable
-fun ShowModifier(){
-    Image(painter = painterResource(id = R.drawable.india), contentDescription ="", alignment = Alignment.Center,
+fun ShowModifier() {
+    Image(
+        painter = painterResource(id = R.drawable.india),
+        contentDescription = "",
+        alignment = Alignment.Center,
         modifier = Modifier
             .width(300.dp)
             .height(300.dp)
             .padding(7.dp)
             .clip(CircleShape)
             .border(10.dp, Color.Red)
-            .fillMaxSize())
+            .fillMaxSize()
+    )
 }
 
 @Composable
 fun ShowColumnList() {
-    Column (verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally){
+    Column(verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         ListViewItem(name = "Akash0", image = R.drawable.user, role = "Software Developer", modifier = Modifier.fillMaxSize())
         ListViewItem(name = "Akash1", image = R.drawable.user, role = "Software Developer")
         ListViewItem(name = "Akash2", image = R.drawable.user, role = "Software Developer")
@@ -100,7 +144,7 @@ fun ShowColumnList() {
 
 
 @Composable
-fun ListViewItem(name: String, image: Int, role: String,modifier: Modifier =Modifier.fillMaxSize()) {
+fun ListViewItem(name: String, image: Int, role: String, modifier: Modifier = Modifier.fillMaxSize()) {
     val painter = painterResource(id = image)
     Row(
         modifier = modifier, horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically
@@ -181,6 +225,6 @@ fun ShowTextInput() {
 }
 
 @Composable
-fun Sayhello(txt: String) {
+fun SayHello(txt: String) {
     Text(text = txt, textAlign = TextAlign.Center)
 }
