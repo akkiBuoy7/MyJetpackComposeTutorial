@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
             //BuildUi()
             //BuildScreen()
             //PreviewItemWithLazyColumn()
-        // SayHello(txt = "Hello World!")
+            // SayHello(txt = "Hello World!")
             //ShowTextInput()
         }
     }
@@ -59,7 +60,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App() {
-    JetpackApplicationTheme {
+    var theme = remember {
+        mutableStateOf(false)
+    }
+    JetpackApplicationTheme(theme.value) {
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center,
@@ -71,13 +75,17 @@ fun App() {
                     .align(Alignment.Center), backgroundColor = Color.White
             ) {
                 Column(
-                    horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.background(MaterialTheme.colors.background)
                 ) {
                     Text(
-                        text = "HELLO WORLD!", style = MaterialTheme.typography.body2
+                        text = "HELLO WORLD!", style = MaterialTheme.typography.body2, color = Color.White
                     )
                     Spacer(modifier = Modifier.padding(10.dp))
                     Button(onClick = {
+
+                        theme.value = !theme.value
 
                     }) {
                         Text(
