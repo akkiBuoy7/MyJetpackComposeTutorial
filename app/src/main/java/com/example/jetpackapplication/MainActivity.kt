@@ -41,6 +41,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jetpackapplication.basics.CoroutineScopeComposable
+import com.example.jetpackapplication.basics.LaunchedEffectComposable
+import com.example.jetpackapplication.basics.Splash
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -50,12 +53,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             //App()
-            Counter()
+            //Counter()
             //BuildUi()
             //BuildScreen()
             //PreviewItemWithLazyColumn()
             // SayHello(txt = "Hello World!")
             //ShowTextInput()
+            //LaunchedEffectComposable(Modifier.fillMaxSize())
+            //CoroutineScopeComposable()
+            Splash()
         }
     }
 }
