@@ -42,7 +42,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.CoroutineScopeComposable
+import com.example.jetpackapplication.basics.DerivedState
 import com.example.jetpackapplication.basics.LaunchedEffectComposable
+import com.example.jetpackapplication.basics.ProducedStateComposable
 import com.example.jetpackapplication.basics.Splash
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
@@ -61,7 +63,9 @@ class MainActivity : ComponentActivity() {
             //ShowTextInput()
             //LaunchedEffectComposable(Modifier.fillMaxSize())
             //CoroutineScopeComposable()
-            Splash()
+            //Splash()
+            //ProducedStateComposable()
+            DerivedState()
         }
     }
 }
