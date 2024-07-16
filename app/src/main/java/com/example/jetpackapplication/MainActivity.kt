@@ -46,6 +46,7 @@ import com.example.jetpackapplication.basics.DerivedState
 import com.example.jetpackapplication.basics.LaunchedEffectComposable
 import com.example.jetpackapplication.basics.ProducedStateComposable
 import com.example.jetpackapplication.basics.Splash
+import com.example.jetpackapplication.basics.TextPreview
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -54,6 +55,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            TextPreview()
             //App()
             //Counter()
             //BuildUi()
@@ -65,7 +67,7 @@ class MainActivity : ComponentActivity() {
             //CoroutineScopeComposable()
             //Splash()
             //ProducedStateComposable()
-            DerivedState()
+            //DerivedState()
         }
     }
 }
@@ -164,17 +166,17 @@ suspend fun fetchData(): List<String> {
 //}
 
 
-@Preview(showSystemUi = true)
-@Composable
-fun PreviewFunction() {
-    //ShowButton()
-    //ShowTextInput()
-    //ShowColumn()
-    //ShowRow()
-    //ShowBox()
-    //ShowColumnList()
-    ShowModifier()
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//fun PreviewFunction() {
+//    //ShowButton()
+//    //ShowTextInput()
+//    //ShowColumn()
+//    //ShowRow()
+//    //ShowBox()
+//    //ShowColumnList()
+//    ShowModifier()
+//}
 
 @Composable
 fun ShowModifier() {

@@ -1,9 +1,11 @@
 package com.example.jetpackapplication.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
@@ -17,8 +19,7 @@ val Typography = Typography(
         fontFamily = FontFamily.Cursive,
         fontWeight = FontWeight.Bold,
         fontSize = 23.sp
-    )
-    /* Other default text styles to override
+    ),
     button = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.W500,
@@ -28,6 +29,13 @@ val Typography = Typography(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = FontFamily.Monospace,
+        color = Color.White,
+        fontSize = 15.sp,
+        textAlign = TextAlign.End,
+
     )
-    */
+
 )
