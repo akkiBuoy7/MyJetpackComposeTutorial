@@ -1,9 +1,7 @@
 package com.example.jetpackapplication.basics
 
-import android.view.textclassifier.TextSelection
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -22,10 +20,12 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.R
@@ -34,7 +34,8 @@ import com.example.jetpackapplication.R
 @Composable
 fun TextPreview() {
 	//MyText()
-	MyTextSelection()
+	//MyTextSelection()
+	MySuperScriptText("Akash","Saha")
 }
 
 @Composable
@@ -132,14 +133,80 @@ fun RepeatText() {
 @Composable
 fun MyTextSelection() {
 	SelectionContainer {
-		Column(modifier = Modifier.fillMaxSize(),
-			   verticalArrangement = Arrangement.SpaceEvenly,
-			   horizontalAlignment = Alignment.CenterHorizontally) {
+		Column(
+			modifier = Modifier.fillMaxSize() ,
+			verticalArrangement = Arrangement.SpaceEvenly ,
+			horizontalAlignment = Alignment.CenterHorizontally
+		) {
 			Text(text = "Selectable")
 			DisableSelection {
 				Text(text = "Not Selectable")
 			}
 			Text(text = "Selectable")
+		}
+	}
+}
+
+@Composable
+fun MySuperScriptText(
+	normalText : String ,
+	superText : String ,
+	normalSize : TextUnit = MaterialTheme.typography.subtitle1.fontSize ,
+	superSize :
+	TextUnit = MaterialTheme.typography.overline.fontSize ,
+	normalWeight : FontWeight = FontWeight.Bold ,
+	superWeight : FontWeight = FontWeight.Light,
+	normalColor : Color = Color.Red,
+	superColor: Color = Color.Magenta
+) {
+	SelectionContainer {
+		Column(
+			modifier = Modifier.fillMaxSize() ,
+			verticalArrangement = Arrangement.SpaceEvenly ,
+			horizontalAlignment = Alignment.CenterHorizontally
+		) {
+			Text(buildAnnotatedString {
+				withStyle(
+					style = SpanStyle(
+						fontWeight = normalWeight ,
+						fontSize = normalSize,
+						color = normalColor
+					)
+				) {
+					append(normalText)
+				}
+				withStyle(
+					style = SpanStyle(
+						fontWeight = superWeight ,
+						fontSize = superSize,
+						baselineShift = BaselineShift.Superscript,
+						color = superColor
+					)
+				) {
+					append(superText)
+				}
+			})
+			Text(buildAnnotatedString {
+				withStyle(
+					style = SpanStyle(
+						fontWeight = normalWeight ,
+						fontSize = normalSize,
+						color = normalColor
+					)
+				) {
+					append(normalText)
+				}
+				withStyle(
+					style = SpanStyle(
+						fontWeight = superWeight ,
+						fontSize = superSize,
+						baselineShift = BaselineShift.Subscript,
+						color = superColor
+					)
+				) {
+					append(superText)
+				}
+			})
 		}
 	}
 }

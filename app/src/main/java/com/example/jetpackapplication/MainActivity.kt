@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.CoroutineScopeComposable
 import com.example.jetpackapplication.basics.DerivedState
 import com.example.jetpackapplication.basics.LaunchedEffectComposable
+import com.example.jetpackapplication.basics.MySuperScriptText
 import com.example.jetpackapplication.basics.MyText
 import com.example.jetpackapplication.basics.MyTextSelection
 import com.example.jetpackapplication.basics.ProducedStateComposable
@@ -58,7 +59,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             //MyText()
-            MyTextSelection()
+            //MyTextSelection()
+            MySuperScriptText("Akash","Saha")
+
+
+
+
+
+
+
+
+
+
+
             //App()
             //Counter()
             //BuildUi()
