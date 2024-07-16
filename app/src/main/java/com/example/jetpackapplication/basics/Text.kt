@@ -1,14 +1,19 @@
 package com.example.jetpackapplication.basics
 
+import android.view.textclassifier.TextSelection
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.selection.DisableSelection
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -28,11 +33,12 @@ import com.example.jetpackapplication.R
 @Preview(showBackground = true , showSystemUi = true)
 @Composable
 fun TextPreview() {
-	MyText()
+	//MyText()
+	MyTextSelection()
 }
 
 @Composable
-private fun MyText() {
+fun MyText() {
 	Column(
 		verticalArrangement = Arrangement.SpaceEvenly , modifier = Modifier.fillMaxSize()
 	) {
@@ -121,4 +127,19 @@ fun RepeatText() {
 		overflow = TextOverflow.Ellipsis
 	)
 
+}
+
+@Composable
+fun MyTextSelection() {
+	SelectionContainer {
+		Column(modifier = Modifier.fillMaxSize(),
+			   verticalArrangement = Arrangement.SpaceEvenly,
+			   horizontalAlignment = Alignment.CenterHorizontally) {
+			Text(text = "Selectable")
+			DisableSelection {
+				Text(text = "Not Selectable")
+			}
+			Text(text = "Selectable")
+		}
+	}
 }

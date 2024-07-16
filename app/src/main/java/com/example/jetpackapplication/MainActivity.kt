@@ -44,6 +44,8 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.CoroutineScopeComposable
 import com.example.jetpackapplication.basics.DerivedState
 import com.example.jetpackapplication.basics.LaunchedEffectComposable
+import com.example.jetpackapplication.basics.MyText
+import com.example.jetpackapplication.basics.MyTextSelection
 import com.example.jetpackapplication.basics.ProducedStateComposable
 import com.example.jetpackapplication.basics.Splash
 import com.example.jetpackapplication.basics.TextPreview
@@ -55,7 +57,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TextPreview()
+            //MyText()
+            MyTextSelection()
             //App()
             //Counter()
             //BuildUi()
