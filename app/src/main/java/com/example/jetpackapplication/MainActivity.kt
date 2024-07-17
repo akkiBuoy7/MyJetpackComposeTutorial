@@ -48,6 +48,7 @@ import com.example.jetpackapplication.basics.LaunchedEffectComposable
 import com.example.jetpackapplication.basics.MyExpandableCard
 import com.example.jetpackapplication.basics.MySuperScriptText
 import com.example.jetpackapplication.basics.MyText
+import com.example.jetpackapplication.basics.MyTextField
 import com.example.jetpackapplication.basics.MyTextSelection
 import com.example.jetpackapplication.basics.ProducedStateComposable
 import com.example.jetpackapplication.basics.Splash
@@ -64,7 +65,9 @@ class MainActivity : ComponentActivity() {
             //MyTextSelection()
             //MySuperScriptText("Akash","Saha")
 
-            MyExpandableCard(title = "Title" , desc = stringResource(id = R.string.desc))
+            //MyExpandableCard(title = "Title" , desc = stringResource(id = R.string
+            // .desc))
+            MyTextField()
 
 
 
