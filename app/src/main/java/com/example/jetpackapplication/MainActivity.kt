@@ -36,6 +36,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,6 +45,7 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.CoroutineScopeComposable
 import com.example.jetpackapplication.basics.DerivedState
 import com.example.jetpackapplication.basics.LaunchedEffectComposable
+import com.example.jetpackapplication.basics.MyExpandableCard
 import com.example.jetpackapplication.basics.MySuperScriptText
 import com.example.jetpackapplication.basics.MyText
 import com.example.jetpackapplication.basics.MyTextSelection
@@ -60,7 +62,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             //MyText()
             //MyTextSelection()
-            MySuperScriptText("Akash","Saha")
+            //MySuperScriptText("Akash","Saha")
+
+            MyExpandableCard(title = "Title" , desc = stringResource(id = R.string.desc))
 
 
 
