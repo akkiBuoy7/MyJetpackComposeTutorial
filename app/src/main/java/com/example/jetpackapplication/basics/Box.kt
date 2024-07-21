@@ -23,6 +23,7 @@ fun MyBox() {
 	// acts like a container in flutter or frame layout
 	// boxes will get stacked upon one another
 
+
 	Box(modifier = Modifier.fillMaxSize() , contentAlignment = Alignment.Center) {
 		Box(
 			modifier = Modifier

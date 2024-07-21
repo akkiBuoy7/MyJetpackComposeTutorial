@@ -42,6 +42,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.MyBox
+import com.example.jetpackapplication.basics.MyCoilImage
 import com.example.jetpackapplication.basics.MyGradientButton
 import com.example.jetpackapplication.ui.theme.GradientColor1
 import com.example.jetpackapplication.ui.theme.GradientColor2
@@ -69,8 +70,8 @@ class MainActivity : ComponentActivity() {
 //				text = "Button" , textColor = Color.White
 //			)
 
-			MyBox()
-
+			//MyBox()
+			MyCoilImage()
 			//App()
 			//Counter()
 			//BuildUi()
