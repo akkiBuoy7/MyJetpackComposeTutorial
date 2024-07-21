@@ -26,7 +26,7 @@ fun HomeScreen(navController : NavHostController) {
 	) {
 		Text(text = "HOME SCREEN" , fontWeight = FontWeight.Bold , color = Color.Black)
 		Button(onClick = {
-			navController.navigate(route = Screens.Details.route)
+			navController.navigate(route = Screens.Details.passIdName(7 , name = "Akash"))
 		}) {
 			Text(text = "Enter")
 		}
