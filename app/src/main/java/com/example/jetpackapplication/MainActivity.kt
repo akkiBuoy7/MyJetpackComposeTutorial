@@ -41,6 +41,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.navigation.basic.SetUpNavGraph
+import com.example.jetpackapplication.basics.navigation.nested_navigation.nav.SetUpNestedNavGraph
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -65,7 +66,8 @@ class MainActivity : ComponentActivity() {
 //				text = "Button" , textColor = Color.White
 //			)
 
-			SetUpNavGraph()
+			//SetUpNavGraph()
+			SetUpNestedNavGraph()
 			//MyBox()
 			//MyCoilImage()
 			//App()
