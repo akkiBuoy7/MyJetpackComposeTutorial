@@ -41,6 +41,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.jetpackapplication.basics.MyBox
 import com.example.jetpackapplication.basics.MyGradientButton
 import com.example.jetpackapplication.ui.theme.GradientColor1
 import com.example.jetpackapplication.ui.theme.GradientColor2
@@ -60,13 +61,15 @@ class MainActivity : ComponentActivity() {
 			//MyExpandableCard(title = "Title" , desc = stringResource(id = R.string
 			// .desc))
 			//MyTextField()
-			MyGradientButton(
-				gradient = Brush.horizontalGradient(
-					colors = listOf
-						(GradientColor1 , GradientColor2)
-				) ,
-				text = "Button" , textColor = Color.White
-			)
+//			MyGradientButton(
+//				gradient = Brush.horizontalGradient(
+//					colors = listOf
+//						(GradientColor1 , GradientColor2)
+//				) ,
+//				text = "Button" , textColor = Color.White
+//			)
+
+			MyBox()
 
 			//App()
 			//Counter()
