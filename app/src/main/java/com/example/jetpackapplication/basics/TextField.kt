@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
@@ -48,6 +49,8 @@ fun MyTextField() {
 		MyOutlineTextField()
 
 		MyPasswordTextField()
+
+		MyCharacterCount()
 
 	}
 
@@ -163,7 +166,7 @@ private fun MyOutlineTextField(
 
 @Composable
 fun MyPasswordTextField() {
-    // remembers in case of configuration changes also
+	// remembers in case of configuration changes also
 	var password by rememberSaveable {
 		mutableStateOf("")
 	}
@@ -207,5 +210,19 @@ fun MyPasswordTextField() {
 @Preview
 @Composable
 private fun PreviewTextField() {
-	MyPasswordTextField()
+	MyCharacterCount()
+}
+
+@Composable
+fun MyCharacterCount() {
+	var text by remember {
+		mutableStateOf("")
+	}
+	val maxCount = 10
+	OutlinedTextField(value = text , onValueChange = { newValue ->
+		if (newValue.length <= maxCount) {
+			text = newValue
+		}
+
+	}, label = { Text(text = "Type")})
 }
