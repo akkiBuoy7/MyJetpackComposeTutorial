@@ -33,7 +33,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -41,11 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.jetpackapplication.basics.MyBox
-import com.example.jetpackapplication.basics.MyCoilImage
-import com.example.jetpackapplication.basics.MyGradientButton
-import com.example.jetpackapplication.ui.theme.GradientColor1
-import com.example.jetpackapplication.ui.theme.GradientColor2
+import com.example.jetpackapplication.basics.navigation.basic.SetUpNavGraph
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -70,8 +65,9 @@ class MainActivity : ComponentActivity() {
 //				text = "Button" , textColor = Color.White
 //			)
 
+			SetUpNavGraph()
 			//MyBox()
-			MyCoilImage()
+			//MyCoilImage()
 			//App()
 			//Counter()
 			//BuildUi()
