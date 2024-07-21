@@ -34,6 +34,23 @@ fun SetUpNavGraph() {
 			)
 			DetailScreen(navController)
 		}
+		composable(
+			route = Screens.Next.route ,
+			arguments = listOf(navArgument(NEXT_ARG_KEY) {
+				type = NavType.IntType
+			} , navArgument(NEXT_ARG_KEY_2) {
+				type = NavType.StringType
+			})
+		) {
+			Log.d("NAVGraph" , "no: ${it.arguments?.getInt(NEXT_ARG_KEY).toString()}")
+			Log.d(
+				"NAVGraph" , "value: ${
+					it.arguments?.getString(NEXT_ARG_KEY_2).toString()
+				}"
+			)
+			NextScreen(navController = navController)
+
+		}
 
 	}
 

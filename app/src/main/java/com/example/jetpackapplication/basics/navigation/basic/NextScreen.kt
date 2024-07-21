@@ -10,13 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun DetailScreen(navController : NavHostController) {
-
+fun NextScreen(navController : NavHostController) {
 	Column(
 		modifier = Modifier
 			.fillMaxSize() ,
@@ -24,29 +21,19 @@ fun DetailScreen(navController : NavHostController) {
 		horizontalAlignment =
 		Alignment.CenterHorizontally
 	) {
-		Text(text = "DETAIL SCREEN" , fontWeight = FontWeight.Bold , color = Color.Black)
+		Text(text = "NEXT SCREEN" , fontWeight = FontWeight.Bold , color = Color.Black)
 		Button(onClick = {
-			navController.navigate(route = Screens.Next.passNoValue(no = 3, value =
-			"Saha"))
-		}) {
-			Text(text = "NEXT")
-		}
-		Button(onClick = {
-			//navController.popBackStack()
-			navController.navigate(route = Screens.Home.route) {
-				popUpTo(Screens.Home.route) {
-					inclusive = true
-				}
-			}
+			navController.popBackStack()
+//			navController.navigate(route = Screens.Details.route) {
+//				// need to fix pop method for required param navigation
+			// this will not work as details screen requires params
+////				popUpTo(Screens.Home.route) {
+////					inclusive = true
+////				}
+//			}
 		}) {
 			Text(text = "Back")
 		}
 	}
 
-}
-
-@Preview(showSystemUi = true)
-@Composable
-private fun DetailPreview() {
-	DetailScreen(rememberNavController())
 }
