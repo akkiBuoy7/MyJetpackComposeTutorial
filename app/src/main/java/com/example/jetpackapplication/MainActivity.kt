@@ -38,10 +38,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.jetpackapplication.basics.navigation.basic.SetUpNavGraph
-import com.example.jetpackapplication.basics.navigation.nested_navigation.nav.SetUpNestedNavGraph
+import com.example.jetpackapplication.basics.bottom_navigation.bottom_screens.MainScreen
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -66,8 +66,9 @@ class MainActivity : ComponentActivity() {
 //				text = "Button" , textColor = Color.White
 //			)
 
+			MainScreen()
 			//SetUpNavGraph()
-			SetUpNestedNavGraph()
+			//SetUpNestedNavGraph()
 			//MyBox()
 			//MyCoilImage()
 			//App()
@@ -88,7 +89,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App() {
-	var theme = remember {
+	val theme = remember {
 		mutableStateOf(false)
 	}
 	JetpackApplicationTheme(theme.value) {
@@ -192,6 +193,12 @@ suspend fun fetchData() : List<String> {
 //    //ShowColumnList()
 //    ShowModifier()
 //}
+
+@Preview
+@Composable
+private fun MainPreview() {
+	MainScreen()
+}
 
 @Composable
 fun ShowModifier() {
