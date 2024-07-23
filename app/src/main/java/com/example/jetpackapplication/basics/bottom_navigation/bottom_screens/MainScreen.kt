@@ -74,7 +74,7 @@ fun RowScope.AddItem(
 		} ,
 		selected = currentDestination?.hierarchy?.any {
 			it.route == screen.route
-		} == true ,
+		} == true , // if the route we sent == widget route is true then item is selected
 		unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled) ,
 		onClick = {
 			navController.navigate(screen.route) {
