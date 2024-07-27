@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.MainScreen
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
+import com.example.jetpackapplication.basics.widgets.lazy_column.MyLazyColumn
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -67,7 +68,10 @@ class MainActivity : ComponentActivity() {
 //				) ,
 //				text = "Button" , textColor = Color.White
 //			)
-            RootNavigationGraph(navController = rememberNavController())
+
+			MyLazyColumn()
+
+            //RootNavigationGraph(navController = rememberNavController())
 			//MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
