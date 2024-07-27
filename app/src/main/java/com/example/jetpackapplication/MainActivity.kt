@@ -41,7 +41,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.jetpackapplication.basics.bottom_navigation.bottom_screens.MainScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.MainScreen
+import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -65,8 +67,8 @@ class MainActivity : ComponentActivity() {
 //				) ,
 //				text = "Button" , textColor = Color.White
 //			)
-
-			MainScreen()
+            RootNavigationGraph(navController = rememberNavController())
+			//MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
 			//MyBox()

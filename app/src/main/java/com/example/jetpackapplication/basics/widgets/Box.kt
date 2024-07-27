@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics
+package com.example.jetpackapplication.basics.widgets
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background

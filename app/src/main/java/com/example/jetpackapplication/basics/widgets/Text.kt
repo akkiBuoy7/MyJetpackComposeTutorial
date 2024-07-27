@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics
+package com.example.jetpackapplication.basics.widgets
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

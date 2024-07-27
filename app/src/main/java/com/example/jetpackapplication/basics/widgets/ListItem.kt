@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics
+package com.example.jetpackapplication.basics.widgets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -92,22 +92,22 @@ data class MyListItem(val role: String, val desc: String, val img: Int)
 
 fun getList(): MutableList<MyListItem> {
     val list = mutableListOf<MyListItem>()
-    list.add(MyListItem(role = "Software Developer", desc = "Develops software", img = R.drawable.user))
-    list.add(MyListItem(role = "AI & ML", desc = "Builds models", img = R.drawable.user1))
-    list.add(MyListItem(role = "Data Analyst", desc = "Analyze data", img = R.drawable.user2))
-    list.add(MyListItem(role = "Manager", desc = "Manages people", img = R.drawable.user3))
-    list.add(MyListItem(role = "Software Developer", desc = "Develops software", img = R.drawable.user))
-    list.add(MyListItem(role = "AI & ML", desc = "Builds models", img = R.drawable.user1))
-    list.add(MyListItem(role = "Data Analyst", desc = "Analyze data", img = R.drawable.user2))
-    list.add(MyListItem(role = "Manager", desc = "Manages people", img = R.drawable.user3))
-    list.add(MyListItem(role = "Software Developer", desc = "Develops software", img = R.drawable.user))
-    list.add(MyListItem(role = "AI & ML", desc = "Builds models", img = R.drawable.user1))
-    list.add(MyListItem(role = "Data Analyst", desc = "Analyze data", img = R.drawable.user2))
-    list.add(MyListItem(role = "Manager", desc = "Manages people", img = R.drawable.user3))
-    list.add(MyListItem(role = "Software Developer", desc = "Develops software", img = R.drawable.user))
-    list.add(MyListItem(role = "AI & ML", desc = "Builds models", img = R.drawable.user1))
-    list.add(MyListItem(role = "Data Analyst", desc = "Analyze data", img = R.drawable.user2))
-    list.add(MyListItem(role = "Manager", desc = "Manages people", img = R.drawable.user3))
+    list.add(MyListItem(role = "Software Developer" , desc = "Develops software" , img = R.drawable.user))
+    list.add(MyListItem(role = "AI & ML" , desc = "Builds models" , img = R.drawable.user1))
+    list.add(MyListItem(role = "Data Analyst" , desc = "Analyze data" , img = R.drawable.user2))
+    list.add(MyListItem(role = "Manager" , desc = "Manages people" , img = R.drawable.user3))
+    list.add(MyListItem(role = "Software Developer" , desc = "Develops software" , img = R.drawable.user))
+    list.add(MyListItem(role = "AI & ML" , desc = "Builds models" , img = R.drawable.user1))
+    list.add(MyListItem(role = "Data Analyst" , desc = "Analyze data" , img = R.drawable.user2))
+    list.add(MyListItem(role = "Manager" , desc = "Manages people" , img = R.drawable.user3))
+    list.add(MyListItem(role = "Software Developer" , desc = "Develops software" , img = R.drawable.user))
+    list.add(MyListItem(role = "AI & ML" , desc = "Builds models" , img = R.drawable.user1))
+    list.add(MyListItem(role = "Data Analyst" , desc = "Analyze data" , img = R.drawable.user2))
+    list.add(MyListItem(role = "Manager" , desc = "Manages people" , img = R.drawable.user3))
+    list.add(MyListItem(role = "Software Developer" , desc = "Develops software" , img = R.drawable.user))
+    list.add(MyListItem(role = "AI & ML" , desc = "Builds models" , img = R.drawable.user1))
+    list.add(MyListItem(role = "Data Analyst" , desc = "Analyze data" , img = R.drawable.user2))
+    list.add(MyListItem(role = "Manager" , desc = "Manages people" , img = R.drawable.user3))
 
     return list
 

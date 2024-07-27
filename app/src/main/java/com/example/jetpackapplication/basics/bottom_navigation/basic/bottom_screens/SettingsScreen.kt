@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics.bottom_navigation.bottom_screens
+package com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens
 
 
 import androidx.compose.foundation.background
@@ -14,13 +14,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ProfileScreen() {
+fun SettingsScreen() {
 
-	Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.secondary),
+	Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.onSecondary),
 	    contentAlignment
 	    = Alignment
 		    .Center){
-		Text(text = "Profile Screen", fontSize = MaterialTheme.typography.h4.fontSize,
+		Text(text = "Settings Screen", fontSize = MaterialTheme.typography.h4.fontSize,
 		     fontWeight = FontWeight.Bold, color = Color.White)
 	}
 
@@ -28,6 +28,6 @@ fun ProfileScreen() {
 
 @Preview
 @Composable
-private fun ProfilePreview() {
-	ProfileScreen()
+private fun SettingsPreview() {
+	SettingsScreen()
 }

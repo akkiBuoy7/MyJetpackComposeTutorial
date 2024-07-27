@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics
+package com.example.jetpackapplication.basics.widgets
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing

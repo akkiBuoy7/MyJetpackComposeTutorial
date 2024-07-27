@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics.bottom_navigation
+package com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -13,14 +13,14 @@ sealed class BottomBarScreen(
 	val icon : ImageVector
 ) {
 
-	 object Home :
-			BottomBarScreen(route = "home" , title = "Home" , Icons.Default.Home)
+	 data object Home :
+			 BottomBarScreen(route = "home" , title = "Home" , Icons.Default.Home)
 
-	 object Profile :
-			BottomBarScreen(route = "profile" , title = "Profile" , Icons.Default.Person)
+	 data object Profile :
+			 BottomBarScreen(route = "profile" , title = "Profile" , Icons.Default.Person)
 
-	 object Settings :
-			BottomBarScreen(
+	 data object Settings :
+			 BottomBarScreen(
 				route = "settings" ,
 				title = "Settings" ,
 				Icons.Default.Settings

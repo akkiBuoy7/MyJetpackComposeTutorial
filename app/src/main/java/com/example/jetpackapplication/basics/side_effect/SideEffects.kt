@@ -1,4 +1,4 @@
-package com.example.jetpackapplication.basics
+package com.example.jetpackapplication.basics.side_effect
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -50,7 +50,7 @@ fun LaunchedEffectComposable(modifier: Modifier = Modifier) {
      */
     LaunchedEffect(key1 = Unit) {
 
-        Log.d(TAG, "LaunchedEffectComposable: Started")
+        Log.d(TAG , "LaunchedEffectComposable: Started")
 
         try {
             for (i in 1..10) {
@@ -59,7 +59,7 @@ fun LaunchedEffectComposable(modifier: Modifier = Modifier) {
             }
 
         } catch (e: Exception) {
-            Log.d(TAG, "LaunchedEffectComposable: Exception ${e.toString()}")
+            Log.d(TAG , "LaunchedEffectComposable: Exception ${e.toString()}")
 
         }
     }
@@ -100,7 +100,7 @@ fun CoroutineScopeComposable() {
 
              */
             scope.launch {
-                Log.d(TAG, "CoroutineScopeComosable: Counter Started")
+                Log.d(TAG , "CoroutineScopeComosable: Counter Started")
                 try {
                     for (i in 1..10) {
                         counter.value++
@@ -108,7 +108,7 @@ fun CoroutineScopeComposable() {
                     }
 
                 } catch (e: Exception) {
-                    Log.d(TAG, "CoroutineScopeComosable: Exception:${e.toString()}")
+                    Log.d(TAG , "CoroutineScopeComosable: Exception:${e.toString()}")
                 }
             }
         }) {
@@ -247,7 +247,7 @@ fun DerivedState() {
 @Composable
 fun UpdateTable(updatedMultiplier: State<Int>, tableOf: MutableState<Int>) {
     LaunchedEffect(key1 =true) {
-        Log.d(TAG, "DerivedState: ${updatedMultiplier.value}")
+        Log.d(TAG , "DerivedState: ${updatedMultiplier.value}")
         if (updatedMultiplier.value==10){
             tableOf.value +=1
         }
