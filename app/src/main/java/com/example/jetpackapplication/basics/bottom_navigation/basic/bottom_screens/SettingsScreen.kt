@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun SettingsScreen() {
 
-	Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.onSecondary) ,
+	Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.secondary) ,
 	    contentAlignment
 	    = Alignment
 		    .Center){

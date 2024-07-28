@@ -71,10 +71,10 @@ class MainActivity : ComponentActivity() {
 			//MyAnimatedLazyColumn()
 
 			//SetupNavGraphForDataPassing()
-			SetupNavGraphForSerializationDataPassing()
+			//SetupNavGraphForSerializationDataPassing()
 
             //RootNavigationGraph(navController = rememberNavController())
-			//MainScreen()
+			MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
 			//MyBox()

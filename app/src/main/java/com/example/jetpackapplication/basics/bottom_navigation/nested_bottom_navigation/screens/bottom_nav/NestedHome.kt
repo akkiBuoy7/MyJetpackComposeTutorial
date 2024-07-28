@@ -3,26 +3,26 @@ package com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_na
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import androidx.wear.compose.material.ContentAlpha
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.NestedBottomBarScreen
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.HomeNavGraph
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter" ,
-              "UnusedMaterial3ScaffoldPaddingParameter"
+@SuppressLint(
+	"UnusedMaterialScaffoldPaddingParameter" ,
+	"UnusedMaterial3ScaffoldPaddingParameter"
 )
 @Composable
 fun NestedHomeScreen(navController : NavHostController = rememberNavController()) {
@@ -76,7 +76,12 @@ fun RowScope.AddItem(
 		selected = currentDestination?.hierarchy?.any {
 			it.route == screen.route
 		} == true ,
-//		unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled) ,
+		colors = NavigationBarItemDefaults.colors(
+			selectedIconColor = Color.Red ,
+			selectedTextColor = Color.Yellow ,
+			unselectedIconColor = Color.Gray ,
+			unselectedTextColor = Color.White
+		) ,
 		onClick = {
 			navController.navigate(screen.route) {
 				popUpTo(navController.graph.findStartDestination().id)
