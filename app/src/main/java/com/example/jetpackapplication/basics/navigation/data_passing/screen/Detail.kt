@@ -11,9 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackapplication.basics.navigation.data_passing.view_model.MyModel
+import com.example.jetpackapplication.basics.navigation.data_passing.view_model.SharedViewModel
 
 @Composable
-fun Detail(result : MyModel?) {
+fun Detail(result : MyModel? , sharedViewModel : SharedViewModel) {
 	Box(
 		modifier = Modifier.fillMaxSize() ,
 		contentAlignment =
@@ -24,15 +25,11 @@ fun Detail(result : MyModel?) {
 			horizontalAlignment = Alignment.CenterHorizontally , verticalArrangement =
 			Arrangement.spacedBy(30.dp)
 		) {
-			result?.firstName?.let { Text(text = it) }
-			result?.secondName?.let { Text(text = it) }
+//			result?.firstName?.let { Text(text = it) }
+//			result?.secondName?.let { Text(text = it) }
+			sharedViewModel.myModel?.firstName?.let { Text(text = it) }
+			sharedViewModel.myModel?.secondName?.let { Text(text = it) }
 		}
 	}
 
-}
-
-@Preview
-@Composable
-private fun DetailPreview() {
-	Detail(null)
 }
