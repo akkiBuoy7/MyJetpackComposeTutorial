@@ -10,9 +10,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -51,7 +52,7 @@ fun PreviewItemWithLazyColumn() {
 fun MyListItemCompose(role: String, desc: String, img: Int) {
 
     Card(
-        elevation = 7.dp,
+        //elevation = 7.dp,
         modifier = Modifier.padding(7.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -78,11 +79,11 @@ fun MyListItemCompose(role: String, desc: String, img: Int) {
 private fun ItemDesc(role: String, desc: String, modifier: Modifier) {
     Column(modifier = modifier) {
         Text(
-            text = role,
-            style = MaterialTheme.typography.h6,
+            text = role ,
+            style = MaterialTheme.typography.headlineMedium ,
         )
         Text(
-            text = desc, style = MaterialTheme.typography.subtitle1,
+            text = desc, style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Thin,
         )
     }

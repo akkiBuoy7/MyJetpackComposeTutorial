@@ -20,12 +20,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -41,13 +40,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.rememberNavController
-import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.MainScreen
-import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
-import com.example.jetpackapplication.basics.navigation.data_passing.nav.SetupNavGraphForDataPassing
-import com.example.jetpackapplication.basics.widgets.lazy_column.MyAnimatedLazyColumn
-import com.example.jetpackapplication.basics.widgets.lazy_column.MyLazyColumn
-import com.example.jetpackapplication.basics.widgets.lazy_column.MyStickyHeaderLazyColumn
+import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
+import com.example.jetpackapplication.basics.navigation.serializable_routes.nav.SetupNavGraphForSerializationDataPassing
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -76,7 +70,8 @@ class MainActivity : ComponentActivity() {
 			//MyStickyHeaderLazyColumn()
 			//MyAnimatedLazyColumn()
 
-			SetupNavGraphForDataPassing()
+			//SetupNavGraphForDataPassing()
+			SetupNavGraphForSerializationDataPassing()
 
             //RootNavigationGraph(navController = rememberNavController())
 			//MainScreen()
@@ -114,16 +109,16 @@ fun App() {
 				modifier = Modifier
 					.height(200.dp)
 					.width(200.dp)
-					.align(Alignment.Center) , backgroundColor = Color.White
+					.align(Alignment.Center) ,
 			) {
 				Column(
 					horizontalAlignment = Alignment.CenterHorizontally ,
 					verticalArrangement = Arrangement.Center ,
-					modifier = Modifier.background(MaterialTheme.colors.background)
+					modifier = Modifier.background(MaterialTheme.colorScheme.background)
 				) {
 					Text(
 						text = "HELLO WORLD!" ,
-						style = MaterialTheme.typography.body2 ,
+						style = MaterialTheme.typography.bodyMedium ,
 						color = Color.White
 					)
 					Spacer(modifier = Modifier.padding(10.dp))
@@ -133,7 +128,7 @@ fun App() {
 
 					}) {
 						Text(
-							text = "Change Theme" , style = MaterialTheme.typography.body1
+							text = "Change Theme" , style = MaterialTheme.typography.bodyMedium
 						)
 					}
 				}
@@ -332,9 +327,10 @@ fun ShowRow() {
 @Composable
 fun ShowButton() {
 	Button(
-		onClick = { } , colors = ButtonDefaults.buttonColors(
-			contentColor = Color.Blue , backgroundColor = Color.Yellow
-		)
+		onClick = { } ,
+//		colors = ButtonDefaults.buttonColors(
+//			contentColor = Color.Blue , backgroundColor = Color.Yellow
+//		)
 	) {
 		Text(text = "click me")
 		Image(

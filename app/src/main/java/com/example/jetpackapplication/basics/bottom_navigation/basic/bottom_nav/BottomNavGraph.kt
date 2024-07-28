@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.HomeScreen
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.ProfileScreen
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.SettingsScreen
 

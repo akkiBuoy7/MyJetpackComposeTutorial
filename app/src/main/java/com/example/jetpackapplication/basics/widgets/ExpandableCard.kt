@@ -10,15 +10,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Card
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,20 +37,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.wear.compose.material.ContentAlpha
 import com.example.jetpackapplication.R
-import com.example.jetpackapplication.ui.theme.Shapes
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MyExpandableCard(
 	title : String ,
-	titleSize : TextUnit = MaterialTheme.typography.h6.fontSize ,
+	titleSize : TextUnit = MaterialTheme.typography.headlineMedium.fontSize ,
 	titleWeight : FontWeight = FontWeight.Bold ,
 	desc : String ,
-	descSize : TextUnit = MaterialTheme.typography.subtitle1.fontSize ,
+	descSize : TextUnit = MaterialTheme.typography.bodyMedium.fontSize ,
 	descWeight : FontWeight = FontWeight.Normal ,
 	descriptionMaxLines : Int = 4 ,
-	shape : Shape = Shapes.medium ,
+	//shape : Shape = Shapes.,
 	padding : Dp = 12.dp
 ) {
 
@@ -65,20 +64,21 @@ fun MyExpandableCard(
 		horizontalAlignment = Alignment
 			.CenterHorizontally
 	) {
-		Card(shape = shape ,
-		     backgroundColor = Color.Magenta ,
-		     modifier = Modifier
-			     .fillMaxWidth()
-			     .padding(horizontal = 7.dp)
-			     .animateContentSize(
-				     animationSpec = tween(
-					     durationMillis = 300 ,
-					     easing = LinearOutSlowInEasing
-				     ) ,
-			     ) ,
-		     onClick = {
-			     expandedState = !expandedState
-		     }) {
+		Card(
+			//shape = shape ,
+//		     backgroundColor = Color.Magenta ,
+             modifier = Modifier
+	             .fillMaxWidth()
+	             .padding(horizontal = 7.dp)
+	             .animateContentSize(
+		             animationSpec = tween(
+			             durationMillis = 300 ,
+			             easing = LinearOutSlowInEasing
+		             ) ,
+	             ) ,
+             onClick = {
+	             expandedState = !expandedState
+             }) {
 			Column(
 				horizontalAlignment = Alignment.CenterHorizontally ,
 				modifier = Modifier

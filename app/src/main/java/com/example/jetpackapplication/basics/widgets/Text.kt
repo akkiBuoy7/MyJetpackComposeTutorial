@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.selection.DisableSelection
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -60,7 +60,7 @@ private fun SimpleText() {
 		fontStyle = FontStyle.Italic ,
 		textAlign = TextAlign.End ,
 		modifier = Modifier
-			.background(MaterialTheme.colors.primary)
+			.background(MaterialTheme.colorScheme.primary)
 			.padding(8.dp)
 			.width(200.dp)
 	)
@@ -70,10 +70,10 @@ private fun SimpleText() {
 private fun TextUsingStyle() {
 	Text(
 		text = stringResource(id = R.string.app_name) ,
-		style = MaterialTheme.typography.subtitle1 ,
-		color = MaterialTheme.typography.subtitle1.color ,
+		style = MaterialTheme.typography.bodyMedium ,
+		color = MaterialTheme.typography.bodyMedium.color ,
 		modifier = Modifier
-			.background(MaterialTheme.colors.secondary)
+			.background(MaterialTheme.colorScheme.secondary)
 			.padding(8.dp)
 	)
 }
@@ -151,9 +151,9 @@ fun MyTextSelection() {
 fun MySuperScriptText(
 	normalText : String ,
 	superText : String ,
-	normalSize : TextUnit = MaterialTheme.typography.subtitle1.fontSize ,
+	normalSize : TextUnit = MaterialTheme.typography.bodyMedium.fontSize ,
 	superSize :
-	TextUnit = MaterialTheme.typography.overline.fontSize ,
+	TextUnit = MaterialTheme.typography.bodyMedium.fontSize ,
 	normalWeight : FontWeight = FontWeight.Bold ,
 	superWeight : FontWeight = FontWeight.Light,
 	normalColor : Color = Color.Red,

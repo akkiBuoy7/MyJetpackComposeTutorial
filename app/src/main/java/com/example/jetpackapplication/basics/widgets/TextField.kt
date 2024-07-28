@@ -8,15 +8,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -55,6 +57,7 @@ fun MyTextField() {
 
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun MyTextFieldBasic(
 ) {
@@ -89,9 +92,9 @@ private fun MyTextFieldBasic(
 		      enabled = enableState , // will not even focus until switched on
 		      modifier = Modifier.background(Color.Magenta) ,
 		      colors = TextFieldDefaults.textFieldColors(
-			      textColor = Color.White ,
-			      leadingIconColor = Color.White ,
-			      trailingIconColor = Color.Black ,
+//			      textColor = Color.White ,
+//			      leadingIconColor = Color.White ,
+//			      trailingIconColor = Color.Black ,
 			      disabledTextColor = Color.Yellow ,
 			      unfocusedLabelColor = Color.Yellow ,
 			      focusedLabelColor = Color.White
@@ -109,6 +112,7 @@ private fun MyTextFieldBasic(
 		      ))
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun MyOutlineTextField(
 ) {
@@ -143,9 +147,9 @@ private fun MyOutlineTextField(
 		//enabled = enableStateO,
 		              modifier = Modifier.background(Color.LightGray) ,
 		              colors = TextFieldDefaults.textFieldColors(
-			              textColor = Color.White ,
-			              leadingIconColor = Color.White ,
-			              trailingIconColor = Color.Black ,
+//			              textColor = Color.White ,
+//			              leadingIconColor = Color.White ,
+//			              trailingIconColor = Color.Black ,
 			              disabledTextColor = Color.Yellow ,
 			              unfocusedLabelColor = Color.Yellow ,
 			              focusedLabelColor = Color.White

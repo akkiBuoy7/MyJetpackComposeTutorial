@@ -2,13 +2,13 @@ package com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_na
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.Icon
-import androidx.compose.material.LocalContentColor
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavDestination
@@ -17,10 +17,13 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.wear.compose.material.ContentAlpha
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.NestedBottomBarScreen
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.HomeNavGraph
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter" ,
+              "UnusedMaterial3ScaffoldPaddingParameter"
+)
 @Composable
 fun NestedHomeScreen(navController : NavHostController = rememberNavController()) {
 	Scaffold(
@@ -42,7 +45,7 @@ fun BottomBar(navController : NavHostController) {
 
 	val bottomBarDestination = screens.any { it.route == currentDestination?.route }
 	if (bottomBarDestination) {
-		BottomNavigation {
+		NavigationBar {
 			screens.forEach { screen ->
 				AddItem(
 					screen = screen ,
@@ -60,7 +63,7 @@ fun RowScope.AddItem(
 	currentDestination : NavDestination? ,
 	navController : NavHostController
 ) {
-	BottomNavigationItem(
+	NavigationBarItem(
 		label = {
 			Text(text = screen.title)
 		} ,
@@ -73,7 +76,7 @@ fun RowScope.AddItem(
 		selected = currentDestination?.hierarchy?.any {
 			it.route == screen.route
 		} == true ,
-		unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled) ,
+//		unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled) ,
 		onClick = {
 			navController.navigate(screen.route) {
 				popUpTo(navController.graph.findStartDestination().id)
