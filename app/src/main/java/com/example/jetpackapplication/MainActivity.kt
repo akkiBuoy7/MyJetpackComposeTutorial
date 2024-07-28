@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_screens.MainScreen
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
+import com.example.jetpackapplication.basics.navigation.data_passing.nav.SetupNavGraphForDataPassing
 import com.example.jetpackapplication.basics.widgets.lazy_column.MyAnimatedLazyColumn
 import com.example.jetpackapplication.basics.widgets.lazy_column.MyLazyColumn
 import com.example.jetpackapplication.basics.widgets.lazy_column.MyStickyHeaderLazyColumn
@@ -73,7 +74,9 @@ class MainActivity : ComponentActivity() {
 
 			//MyLazyColumn()
 			//MyStickyHeaderLazyColumn()
-			MyAnimatedLazyColumn()
+			//MyAnimatedLazyColumn()
+
+			SetupNavGraphForDataPassing()
 
             //RootNavigationGraph(navController = rememberNavController())
 			//MainScreen()

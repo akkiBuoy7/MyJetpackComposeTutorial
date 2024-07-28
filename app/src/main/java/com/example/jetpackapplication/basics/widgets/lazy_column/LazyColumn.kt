@@ -29,9 +29,9 @@ fun MyLazyColumn() {
 			}
 		) { index , person ->
 
-			CustomItem(model = person) {
-				Log.d("MyLazyColumn" , "OnClick: ${it.firstName} index : $index")
-			}
+//			CustomItem(model = person) {
+//				Log.d("MyLazyColumn" , "OnClick: ${it.firstName} index : $index")
+//			}
 
 		}
 
