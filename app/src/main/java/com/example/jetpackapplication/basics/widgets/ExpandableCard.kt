@@ -17,7 +17,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -29,7 +28,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -39,6 +37,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.ContentAlpha
 import com.example.jetpackapplication.R
+import com.example.jetpackapplication.ui.theme.shapeScheme
 
 @Composable
 fun MyExpandableCard(
@@ -65,7 +64,7 @@ fun MyExpandableCard(
 			.CenterHorizontally
 	) {
 		Card(
-			//shape = shape ,
+			shape = MaterialTheme.shapeScheme.large ,
 //		     backgroundColor = Color.Magenta ,
              modifier = Modifier
 	             .fillMaxWidth()
