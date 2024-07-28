@@ -3,8 +3,10 @@ package com.example.jetpackapplication.basics.navigation.serializable_routes.scr
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -36,6 +38,8 @@ fun Detail(id : Int , onClick : (demoModel : DemoModel) -> Unit) {
 			horizontalAlignment = Alignment.CenterHorizontally ,
 			verticalArrangement = Arrangement.spacedBy(10.dp)
 		) {
+			Text(text = "$id")
+			Spacer(modifier = Modifier.height(10.dp))
 			TextField(value = firstText , onValueChange = { newText ->
 				firstText = newText
 			})
