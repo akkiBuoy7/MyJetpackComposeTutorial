@@ -3,14 +3,20 @@ package com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalAbsoluteTonalElevation
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.surfaceColorAtElevation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -47,7 +53,7 @@ fun BottomBarRow(navController : NavHostController) {
 	val navBackStackEntry by navController.currentBackStackEntryAsState()
 	val currentDestination = navBackStackEntry?.destination
 
-	NavigationBar(containerColor = Color.Yellow) {
+	NavigationBar(containerColor = Color.Yellow, contentColor = Color.Black) {
 		screens.forEach { screen ->
 			AddItem(
 				screen = screen , currentDestination = currentDestination ,
@@ -66,7 +72,12 @@ fun RowScope.AddItem(
 ) {
 
 	NavigationBarItem(
-		label = { screen.title } ,
+		label = {
+			Text(
+				text = screen.title,
+				fontSize = 10.sp
+			)
+		},
 		icon = {
 			Icon(
 				imageVector = screen.icon ,
@@ -78,9 +89,11 @@ fun RowScope.AddItem(
 		} == true , // if the route we sent == widget route is true then item is selected
 		colors = NavigationBarItemDefaults.colors(
 			selectedIconColor = Color.Red,
-			selectedTextColor = Color.Yellow,
+			selectedTextColor = Color.Red,
 			unselectedIconColor = Color.Gray ,
-			unselectedTextColor = Color.Black
+			unselectedTextColor = Color.Black,
+			indicatorColor = Color.Yellow
+
 		),
 		onClick = {
 			navController.navigate(screen.route) {
