@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
 import com.example.jetpackapplication.basics.navigation.serializable_routes.nav.SetupNavGraphForSerializationDataPassing
+import com.example.jetpackapplication.basics.splash.splash_nav.SetUpSplashNavGraph
 import com.example.jetpackapplication.basics.widgets.ListShimmer
 import com.example.jetpackapplication.basics.widgets.MyAnimatedShimmer
 import com.example.jetpackapplication.basics.widgets.MyExpandableCard
@@ -60,7 +61,9 @@ class MainActivity : ComponentActivity() {
 			//MySuperScriptText("Akash","Saha")
 
 
-			ListShimmer()
+			//ListShimmer()
+
+			SetUpSplashNavGraph()
 
 //			MyExpandableCard(title = "Title" , desc = stringResource(id = R.string
 //			 .desc))
