@@ -15,7 +15,7 @@
         android:theme="@style/Theme.JetpackApplication"
         tools:targetApi="31">
         <activity
-            android:name=".BoardingMainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.JetpackApplication">
             <intent-filter>
