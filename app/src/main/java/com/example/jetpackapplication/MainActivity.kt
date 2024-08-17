@@ -35,20 +35,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.navigation.serializable_routes.nav.SetupNavGraphForSerializationDataPassing
-import com.example.jetpackapplication.basics.splash.splash_nav.SetUpSplashNavGraph
-import com.example.jetpackapplication.basics.widgets.ListShimmer
-import com.example.jetpackapplication.basics.widgets.LoadingAnimation
-import com.example.jetpackapplication.basics.widgets.LoadingAnimationContent
-import com.example.jetpackapplication.basics.widgets.MyAnimatedShimmer
-import com.example.jetpackapplication.basics.widgets.MyExpandableCard
+import com.example.jetpackapplication.basics.widgets.SelectableItemContent
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -62,11 +55,12 @@ class MainActivity : ComponentActivity() {
 			//MyTextSelection()
 			//MySuperScriptText("Akash","Saha")
 
-
 			//ListShimmer()
 
 			//SetUpSplashNavGraph()
-			LoadingAnimationContent()
+			//LoadingAnimationContent()
+
+			SelectableItemContent()
 
 //			MyExpandableCard(title = "Title" , desc = stringResource(id = R.string
 //			 .desc))
@@ -86,7 +80,7 @@ class MainActivity : ComponentActivity() {
 			//SetupNavGraphForDataPassing()
 			//SetupNavGraphForSerializationDataPassing()
 
-            //RootNavigationGraph(navController = rememberNavController())
+			//RootNavigationGraph(navController = rememberNavController())
 			//MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
@@ -141,7 +135,8 @@ fun App() {
 
 					}) {
 						Text(
-							text = "Change Theme" , style = MaterialTheme.typography.bodyMedium
+							text = "Change Theme" ,
+							style = MaterialTheme.typography.bodyMedium
 						)
 					}
 				}
