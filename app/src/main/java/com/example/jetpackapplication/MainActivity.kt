@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
 import com.example.jetpackapplication.basics.widgets.SelectableItemContent
 import com.example.jetpackapplication.basics.widgets.SwipableListContent
+import com.example.jetpackapplication.basics.widgets.lazy_column_box_constraint.nav.SetupNavGraphBoxConstraint
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -61,9 +62,11 @@ class MainActivity : ComponentActivity() {
 			//SetUpSplashNavGraph()
 			//LoadingAnimationContent()
 
-			SwipableListContent()
+			//SwipableListContent()
 
 			//SelectableItemContent()
+
+			SetupNavGraphBoxConstraint()
 
 //			MyExpandableCard(title = "Title" , desc = stringResource(id = R.string
 //			 .desc))
