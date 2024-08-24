@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
 			//SelectableItemContent()
 
 			HyperlinkText(
-				fullText = "By signing in, you agree to the privacy policy and terms of " +
+				text = "By signing in, you agree to the privacy policy and terms of " +
 						"use." ,
 				linkText = listOf("privacy policy" , "terms of use") ,
 				hyperlinks = listOf("https://youtube.com" , "https://www.google.com") ,
