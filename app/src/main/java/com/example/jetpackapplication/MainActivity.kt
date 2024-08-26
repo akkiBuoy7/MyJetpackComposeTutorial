@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
 import com.example.jetpackapplication.basics.widgets.HyperlinkText
 import com.example.jetpackapplication.basics.widgets.WebBrowser
+import com.example.jetpackapplication.basics.widgets.lazy_column.LazyListStateContent
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -65,7 +66,9 @@ class MainActivity : ComponentActivity() {
 
 			//SelectableItemContent()
 
-			WebBrowser()
+			LazyListStateContent()
+
+			//WebBrowser()
 
 //			HyperlinkText(
 //				text = "By signing in, you agree to the privacy policy and terms of " +
