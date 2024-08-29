@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
 import com.example.jetpackapplication.basics.widgets.HyperlinkText
+import com.example.jetpackapplication.basics.widgets.TopAppBar
 import com.example.jetpackapplication.basics.widgets.WebBrowser
 import com.example.jetpackapplication.basics.widgets.lazy_column.LazyListStateContent
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
@@ -66,7 +67,10 @@ class MainActivity : ComponentActivity() {
 
 			//SelectableItemContent()
 
-			LazyListStateContent()
+			//LazyListStateContent()
+
+			TopAppBar()
+
 
 			//WebBrowser()
 
