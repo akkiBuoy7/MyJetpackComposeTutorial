@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
 
 			//LazyListStateContent()
 
-			TopAppBar()
+			//TopAppBar()
 
 
 			//WebBrowser()
@@ -105,7 +105,7 @@ class MainActivity : ComponentActivity() {
 			//SetupNavGraphForSerializationDataPassing()
 
 			//RootNavigationGraph(navController = rememberNavController())
-			//MainScreen()
+			MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
 			//MyBox()
