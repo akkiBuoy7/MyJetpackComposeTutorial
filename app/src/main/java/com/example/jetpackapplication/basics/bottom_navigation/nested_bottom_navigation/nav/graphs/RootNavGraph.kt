@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.NestedHomeScreen
 
 object Graph {
@@ -22,7 +23,8 @@ fun RootNavigationGraph(navController : NavHostController) {
 	) {
 		authNavGraph(navController = navController)
 		composable(route = Graph.HOME) {
-			NestedHomeScreen()
+			Material3BottomNav()
+			//NestedHomeScreen()
 		}
 	}
 }

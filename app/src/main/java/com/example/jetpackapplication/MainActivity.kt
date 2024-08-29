@@ -40,7 +40,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
+import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
+import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
 import com.example.jetpackapplication.basics.widgets.HyperlinkText
 import com.example.jetpackapplication.basics.widgets.TopAppBar
 import com.example.jetpackapplication.basics.widgets.WebBrowser
@@ -70,6 +73,9 @@ class MainActivity : ComponentActivity() {
 			//LazyListStateContent()
 
 			//TopAppBar()
+
+			//Material3BottomNav()
+
 
 
 			//WebBrowser()
@@ -104,8 +110,8 @@ class MainActivity : ComponentActivity() {
 			//SetupNavGraphForDataPassing()
 			//SetupNavGraphForSerializationDataPassing()
 
-			//RootNavigationGraph(navController = rememberNavController())
-			MainScreen()
+			RootNavigationGraph(navController = rememberNavController())
+			//MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
 			//MyBox()
