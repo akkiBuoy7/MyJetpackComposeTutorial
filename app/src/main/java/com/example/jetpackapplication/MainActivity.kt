@@ -44,6 +44,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
+import com.example.jetpackapplication.basics.nav_drawer.SetupNavDrawer
+import com.example.jetpackapplication.basics.nav_drawer.navigation.SetupNavDrawerGraph
 import com.example.jetpackapplication.basics.widgets.HyperlinkText
 import com.example.jetpackapplication.basics.widgets.TopAppBar
 import com.example.jetpackapplication.basics.widgets.WebBrowser
@@ -110,7 +112,7 @@ class MainActivity : ComponentActivity() {
 			//SetupNavGraphForDataPassing()
 			//SetupNavGraphForSerializationDataPassing()
 
-			RootNavigationGraph(navController = rememberNavController())
+			//RootNavigationGraph(navController = rememberNavController())
 			//MainScreen()
 			//SetUpNavGraph()
 			//SetUpNestedNavGraph()
@@ -128,6 +130,10 @@ class MainActivity : ComponentActivity() {
 			//Splash()
 			//ProducedStateComposable()
 			//DerivedState()
+
+
+			SetupNavDrawer()
+
 		}
 	}
 }
