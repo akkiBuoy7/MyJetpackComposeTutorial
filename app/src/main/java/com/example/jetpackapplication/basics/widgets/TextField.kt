@@ -91,7 +91,7 @@ private fun MyTextFieldBasic(
 		//readOnly = readOnlyState,
 		      enabled = enableState , // will not even focus until switched on
 		      modifier = Modifier.background(Color.Magenta) ,
-		      colors = TextFieldDefaults.textFieldColors(
+		      colors = TextFieldDefaults.colors(
 //			      textColor = Color.White ,
 //			      leadingIconColor = Color.White ,
 //			      trailingIconColor = Color.Black ,
@@ -146,7 +146,7 @@ private fun MyOutlineTextField(
 	                  readOnly = readOnlyStateO , // will focus only can not change value
 		//enabled = enableStateO,
 		              modifier = Modifier.background(Color.LightGray) ,
-		              colors = TextFieldDefaults.textFieldColors(
+		              colors = TextFieldDefaults.colors(
 //			              textColor = Color.White ,
 //			              leadingIconColor = Color.White ,
 //			              trailingIconColor = Color.Black ,

@@ -25,6 +25,9 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -42,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
+import com.example.jetpackapplication.basics.bottom_navigation.nav_rail.navigation_rail_screen.Material3BottomRailNav
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
 import com.example.jetpackapplication.basics.nav_drawer.SetupNavDrawer
@@ -56,6 +60,7 @@ const val TAG = "MyJetpack"
 
 class MainActivity : ComponentActivity() {
 
+	@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 	override fun onCreate(savedInstanceState : Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContent {
@@ -132,7 +137,14 @@ class MainActivity : ComponentActivity() {
 			//DerivedState()
 
 
-			SetupNavDrawer()
+			//SetupNavDrawer()
+
+			val windowClass = calculateWindowSizeClass(this)
+			val showNavigationRail =
+				windowClass.widthSizeClass != WindowWidthSizeClass.Compact
+
+			Material3BottomRailNav(navController = rememberNavController(),
+			                       showNavigationRail = showNavigationRail)
 
 		}
 	}
