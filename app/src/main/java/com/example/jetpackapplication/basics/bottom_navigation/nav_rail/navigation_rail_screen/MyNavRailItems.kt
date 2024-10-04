@@ -1,11 +1,15 @@
 package com.example.jetpackapplication.basics.bottom_navigation.nav_rail.navigation_rail_screen
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AllInbox
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.AllInbox
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.jetpackapplication.basics.bottom_navigation.nav_rail.navigation_rail_screen.rail_screens.RailScreens
@@ -43,6 +47,23 @@ sealed class MyNavRailItems(
 		selectedIcon = Icons.Filled.Settings ,
 		unselectedIcon = Icons.Outlined.Settings ,
 		route = RailScreens.Settings ,
+		hasNews = true
+		//routeS = "Settings"
+	)
+
+	data object All : MyNavRailItems(
+		title = "All" ,
+		selectedIcon = Icons.Filled.AllInbox ,
+		unselectedIcon = Icons.Outlined.AllInbox ,
+		route = RailScreens.All ,
+		//routeS = "Settings"
+	)
+
+	data object Urgent : MyNavRailItems(
+		title = "Urgent" ,
+		selectedIcon = Icons.Filled.Notifications ,
+		unselectedIcon = Icons.Outlined.Notifications ,
+		route = RailScreens.Urgent ,
 		hasNews = true
 		//routeS = "Settings"
 	)

@@ -29,5 +29,12 @@ fun SetupNavGraphForRail(navController : NavHostController) {
 			SettingsScreenRail()
 		}
 
+		composable<RailScreens.All> {
+			AllContent()
+		}
+
+		composable<RailScreens.Urgent> {
+			UrgentContent()
+		}
 	}
 }

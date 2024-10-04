@@ -30,12 +30,14 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.nav_rail.navigation_rail_nav.navigation_rail_graph.SetupNavGraphForRail
+
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -53,13 +55,14 @@ fun Material3BottomRailNav(
 		} ,
 
 		) {
-
 		SetupNavGraphForRail(navController = navController)
 		if (showNavigationRail) {
 			NavigationSideBar(
 				navController
 			)
 		}
+
+
 
 	}
 
