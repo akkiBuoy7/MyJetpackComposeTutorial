@@ -50,6 +50,7 @@ import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_nav
 import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
 import com.example.jetpackapplication.basics.nav_drawer.SetupNavDrawer
 import com.example.jetpackapplication.basics.nav_drawer.navigation.SetupNavDrawerGraph
+import com.example.jetpackapplication.basics.tab_screens.MyTabRow
 import com.example.jetpackapplication.basics.view_pager.MyViewPager
 import com.example.jetpackapplication.basics.widgets.HyperlinkText
 import com.example.jetpackapplication.basics.widgets.TopAppBar
@@ -147,7 +148,9 @@ class MainActivity : ComponentActivity() {
 //			Material3BottomRailNav(navController = rememberNavController(),
 //			                       showNavigationRail = showNavigationRail)
 
-			MyViewPager()
+			//MyViewPager()
+
+			MyTabRow()
 
 		}
 	}
