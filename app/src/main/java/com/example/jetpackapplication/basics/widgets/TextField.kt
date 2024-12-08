@@ -205,7 +205,7 @@ fun MyPasswordTextField() {
 		} ,
 		keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password) ,
 		visualTransformation = if (passwordVisibility) VisualTransformation.None
-		else PasswordVisualTransformation()
+			else PasswordVisualTransformation()
 	)
 
 }
@@ -213,7 +213,7 @@ fun MyPasswordTextField() {
 @Preview
 @Composable
 private fun PreviewTextField() {
-	MyCharacterCount()
+	MyPasswordTextField()
 }
 
 @Composable

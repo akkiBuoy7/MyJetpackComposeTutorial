@@ -26,8 +26,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -43,19 +41,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.rememberNavController
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.bottom_navigation.nav_rail.navigation_rail_screen.Material3BottomRailNav
-import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.nav.graphs.RootNavigationGraph
-import com.example.jetpackapplication.basics.bottom_navigation.nested_bottom_navigation.screens.bottom_nav.Material3BottomNav
-import com.example.jetpackapplication.basics.nav_drawer.SetupNavDrawer
-import com.example.jetpackapplication.basics.nav_drawer.navigation.SetupNavDrawerGraph
-import com.example.jetpackapplication.basics.tab_screens.MyTabRow
-import com.example.jetpackapplication.basics.view_pager.MyViewPager
-import com.example.jetpackapplication.basics.widgets.HyperlinkText
-import com.example.jetpackapplication.basics.widgets.TopAppBar
-import com.example.jetpackapplication.basics.widgets.WebBrowser
-import com.example.jetpackapplication.basics.widgets.lazy_column.LazyListStateContent
+import com.example.jetpackapplication.basics.item_selection.nav.SetupItemSelectionNavGraph
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -150,7 +137,9 @@ class MainActivity : ComponentActivity() {
 
 			//MyViewPager()
 
-			MyTabRow()
+			//MyTabRow()
+
+			SetupItemSelectionNavGraph()
 
 		}
 	}

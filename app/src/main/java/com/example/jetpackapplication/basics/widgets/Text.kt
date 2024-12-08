@@ -34,8 +34,9 @@ import com.example.jetpackapplication.R
 @Composable
 fun TextPreview() {
 	//MyText()
-	//MyTextSelection()
-	MySuperScriptText("Akash","Saha")
+	MyTextSelection()
+	//RepeatText()
+	//MySuperScriptText("Akash","Saha")
 }
 
 @Composable
