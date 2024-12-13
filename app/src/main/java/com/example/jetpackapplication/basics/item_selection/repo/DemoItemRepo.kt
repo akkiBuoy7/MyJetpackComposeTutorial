@@ -1,5 +1,6 @@
 package com.example.jetpackapplication.basics.item_selection.repo
 
+import android.util.Log
 import com.example.jetpackapplication.R
 import com.example.jetpackapplication.basics.item_selection.data.DemoItemSelection
 import kotlinx.coroutines.delay
@@ -13,6 +14,7 @@ class DemoItemRepo {
 		get() = _demoItems
 
 	 suspend fun getDemoItems() {
+		 Log.d("SELECTION_CODE" , "repo method ")
 		//delay(3000)
 		val list = mutableListOf<DemoItemSelection>()
 		list.add(

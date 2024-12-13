@@ -42,7 +42,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.item_selection.nav.SetupItemSelectionNavGraph
+import com.example.jetpackapplication.basics.side_effect.LaunchTryAgain
+import com.example.jetpackapplication.basics.side_effect.ProducedStateComposable
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -71,8 +72,6 @@ class MainActivity : ComponentActivity() {
 			//TopAppBar()
 
 			//Material3BottomNav()
-
-
 
 			//WebBrowser()
 
@@ -125,7 +124,6 @@ class MainActivity : ComponentActivity() {
 			//ProducedStateComposable()
 			//DerivedState()
 
-
 			//SetupNavDrawer()
 
 //			val windowClass = calculateWindowSizeClass(this)
@@ -139,7 +137,10 @@ class MainActivity : ComponentActivity() {
 
 			//MyTabRow()
 
-			SetupItemSelectionNavGraph()
+			//SetupItemSelectionNavGraph()
+
+
+			ProducedStateComposable()
 
 		}
 	}

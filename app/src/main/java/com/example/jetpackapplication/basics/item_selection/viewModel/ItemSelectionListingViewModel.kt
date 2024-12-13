@@ -7,6 +7,7 @@ import com.example.jetpackapplication.basics.item_selection.data.DemoItemSelecti
 import com.example.jetpackapplication.basics.item_selection.repo.DemoItemRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 
 class ItemSelectionListingViewModel(private val demoItemRepo : DemoItemRepo) :
@@ -15,17 +16,14 @@ class ItemSelectionListingViewModel(private val demoItemRepo : DemoItemRepo) :
 		get() = demoItemRepo.demoItems
 	val demoItems: StateFlow<List<DemoItemSelection>> = _demoItems
 
-
-//	val demoItems : MutableStateFlow<List<DemoItemSelection>>
-//		get() = demoItemRepo.demoItems
+	fun getSelectedItems() = _demoItems.value.filter { it.isSelected }
 
 	init {
 		viewModelScope.launch {
-			Log.d("SELECTION_CODE" , "view model launch ")
 			demoItemRepo.getDemoItems()
 		}
 	}
-//	// Toggle selection for the given item
+// Toggle selection for the given item
 	fun toggleSelection(index: Int) {
 		_demoItems.value = _demoItems.value.mapIndexed { i, item ->
 			if (i == index) {

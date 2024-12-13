@@ -1,6 +1,5 @@
 package com.example.jetpackapplication.basics.item_selection.ui
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -17,12 +16,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -38,33 +37,51 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.jetpackapplication.basics.item_selection.data.DemoItemSelection
-import com.example.jetpackapplication.basics.item_selection.repo.DemoItemRepo
+import com.example.jetpackapplication.basics.item_selection.nav.ItemSelectionScreens
 import com.example.jetpackapplication.basics.item_selection.viewModel.ItemSelectionListingViewModel
 
 @Composable
-fun ItemSelectionDashScreenContent() {
-	val viewModel = ItemSelectionListingViewModel(DemoItemRepo())
-	val demoItems: List<DemoItemSelection> by viewModel.demoItems.collectAsState(initial = emptyList())
-	if (demoItems.isEmpty()) {
-		Box(
-			modifier = Modifier.fillMaxSize() ,
-			contentAlignment = Alignment.Center
-		) {
-			CircularProgressIndicator(
-				color = Color.White ,
-				strokeWidth = 2.dp ,
-				modifier = Modifier.size(30.dp)
-			)
-		}
-	} else {
-		Log.d("SELECTION_CODE" , "ItemSelectionDashScreenContent: ${demoItems}")
-		LazyColumn(modifier = Modifier.padding(5.dp)) {
-			items(demoItems.size) { index ->
-				MyListItemCompose(demoItems[index] , index , viewModel)
+fun ItemSelectionDashScreenContent(
+	navController : NavHostController ,
+	viewModel : ItemSelectionListingViewModel ,
+) {
+
+	val demoItems : List<DemoItemSelection> by viewModel.demoItems.collectAsState(initial = emptyList())
+	Column(modifier = Modifier.fillMaxSize()) {
+		if (demoItems.isEmpty()) {
+			Box(
+				modifier = Modifier.fillMaxSize() ,
+				contentAlignment = Alignment.Center
+			) {
+				CircularProgressIndicator(
+					color = Color.White ,
+					strokeWidth = 2.dp ,
+					modifier = Modifier.size(30.dp)
+				)
 			}
+		} else {
+			LazyColumn(
+				modifier = Modifier
+					.padding(5.dp)
+					.weight(1f)
+			) {
+				items(demoItems.size) { index ->
+					MyListItemCompose(
+						demoItems[index] ,
+						index ,
+						viewModel ,
+					)
+				}
+			}
+		}
+		Button(onClick = {
+			val selectedItems = viewModel.getSelectedItems()
+			navController.navigate(ItemSelectionScreens.DetailsScreen(selectedItems))
+		} , modifier = Modifier.align(Alignment.CenterHorizontally)) {
+			Text(text = "Next")
 		}
 	}
 
@@ -74,7 +91,7 @@ fun ItemSelectionDashScreenContent() {
 fun MyListItemCompose(
 	item : DemoItemSelection ,
 	index : Int ,
-	viewModel : ItemSelectionListingViewModel
+	viewModel : ItemSelectionListingViewModel ,
 ) {
 	Card(onClick = {
 		viewModel.toggleSelection(index)
@@ -169,18 +186,6 @@ fun myAnnotatedString(desc : String) : AnnotatedString {
 
 		}
 	}
-}
-
-@Preview
-@Composable
-private fun MyListItemComposePrev() {
-//	MyListItemCompose(
-//		DemoItemSelection(
-//			role = "Manager" , desc = "Manages people" , img = R.drawable.user3,
-//		) , list = listOf(DemoItemSelection(
-//			role = "Manager" , desc = "Manages people" , img = R.drawable.user3,
-//		)) , index = 1
-//	)
 }
 
 

@@ -15,14 +15,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -48,7 +51,7 @@ fun LaunchedEffectComposable(modifier: Modifier = Modifier) {
     The coroutine scope that launches it belong to Composable so it cannot be
     controlled
      */
-    LaunchedEffect(key1 = Unit) {
+    LaunchedEffect(key1 = counter) {
 
         Log.d(TAG , "LaunchedEffectComposable: Started")
 
@@ -76,6 +79,75 @@ fun LaunchedEffectComposable(modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+fun LaunchTry() {
+    var count by remember { mutableIntStateOf(0) }
+    println("LaunchedEffect is started")
+    // Trigger the LaunchedEffect to run multiple times based on count
+    LaunchedEffect(Unit) {
+        // This will run every time count changes
+        println("LaunchedEffect is running, count = $count")
+        delay(1000) // simulate some work
+    }
+
+
+    Button(onClick = { count++ }) {
+        Text("Run LaunchedEffect")
+    }
+}
+
+
+@Composable
+fun LaunchTryAgain() {
+    var count by remember { mutableIntStateOf(0) }
+  
+    LaunchedEffect(Unit) {
+        delay(2000) // simulate some work
+
+        println("first LaunchedEffect is running, count = $count")
+        count = 10
+    }
+
+    MyCounter(count)
+}
+
+@Composable
+fun MyCounter(value : Int) {
+    LaunchedEffect(key1 = Unit) {
+        delay(5000)
+        /*
+        This will print 0 as second LaunchedEffect already ran in
+        initial composition and hence will not receive updated value
+        at recomposition (when value changed to 10 after 2 sec)
+        */
+        println("second LaunchedEffect is running, count = $value")
+    }
+    Text(text = value.toString())
+}
+
+//
+//@Composable
+//fun SideEffectTry() {
+//    var count by remember { mutableIntStateOf(0) }
+//    // Trigger the LaunchedEffect to run multiple times based on count
+//    println("SideEffect is not started, count = $count")
+//    SideEffect {
+//        // This will run every time count changes
+//        println("SideEffect is started, count = $count")
+//    }
+//
+//
+//    Button(onClick = { count++ }) {
+//        SideEffect {
+//            println("SideEffect is running, count = $count")
+//        }
+//        Text("Run SideEffect $count")
+//
+//    }
+//}
+
+
 
 @Composable
 fun CoroutineScopeComposable() {
