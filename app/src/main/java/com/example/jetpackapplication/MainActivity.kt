@@ -42,8 +42,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.side_effect.LaunchTryAgain
-import com.example.jetpackapplication.basics.side_effect.ProducedStateComposable
+import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyDisposableState
+import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyLaunchedEffect
+import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyRememberCoroutineScope
+import com.example.jetpackapplication.basics.side_effect.non_lifecycle_aware.MySideEffect
+import com.example.jetpackapplication.basics.side_effect.state_management.MyProduceState
+import com.example.jetpackapplication.basics.side_effect.state_management.MyRememberUpdatedState
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -140,8 +144,21 @@ class MainActivity : ComponentActivity() {
 			//SetupItemSelectionNavGraph()
 
 
-			ProducedStateComposable()
+			//ProducedStateComposable()
 
+			//MyDerivedStateOf()
+
+			//MyRememberCoroutineScope()
+
+			//MyLaunchedEffect()
+
+			// MyRememberUpdatedState()
+
+			// MyDisposableState()
+
+			// MySideEffect()
+
+			MyProduceState()
 		}
 	}
 }
