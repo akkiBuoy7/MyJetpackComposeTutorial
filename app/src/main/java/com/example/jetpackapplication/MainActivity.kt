@@ -42,12 +42,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyDisposableState
-import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyLaunchedEffect
-import com.example.jetpackapplication.basics.side_effect.lifecycle_aware.MyRememberCoroutineScope
-import com.example.jetpackapplication.basics.side_effect.non_lifecycle_aware.MySideEffect
-import com.example.jetpackapplication.basics.side_effect.state_management.MyProduceState
-import com.example.jetpackapplication.basics.side_effect.state_management.MyRememberUpdatedState
+import com.example.jetpackapplication.basics.widgets.constraint_layout.MainConstraintFile
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -143,7 +138,6 @@ class MainActivity : ComponentActivity() {
 
 			//SetupItemSelectionNavGraph()
 
-
 			//ProducedStateComposable()
 
 			//MyDerivedStateOf()
@@ -158,7 +152,9 @@ class MainActivity : ComponentActivity() {
 
 			// MySideEffect()
 
-			MyProduceState()
+			//MyProduceState()
+
+			MainConstraintFile()
 		}
 	}
 }
@@ -307,19 +303,13 @@ fun ShowColumnList() {
 			modifier = Modifier.fillMaxSize()
 		)
 		ListViewItem(
-			name = "Akash1" ,
-			image = R.drawable.user ,
-			role = "Software Developer"
+			name = "Akash1" , image = R.drawable.user , role = "Software Developer"
 		)
 		ListViewItem(
-			name = "Akash2" ,
-			image = R.drawable.user ,
-			role = "Software Developer"
+			name = "Akash2" , image = R.drawable.user , role = "Software Developer"
 		)
 		ListViewItem(
-			name = "Akash3" ,
-			image = R.drawable.user ,
-			role = "Software Developer"
+			name = "Akash3" , image = R.drawable.user , role = "Software Developer"
 		)
 	}
 }
