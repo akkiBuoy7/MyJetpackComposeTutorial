@@ -42,7 +42,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackapplication.basics.bottom_navigation.basic.bottom_nav.MainScreen
-import com.example.jetpackapplication.basics.widgets.constraint_layout.MainConstraintFile
+import com.example.jetpackapplication.basics.layouts.nested_scroll.nested_rows.NestedRowsInsideColumn
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -154,7 +154,12 @@ class MainActivity : ComponentActivity() {
 
 			//MyProduceState()
 
-			MainConstraintFile()
+			//MainConstraintFile()
+			//NestedScrollview()
+			//VerticalHorizontalScroll()
+			NestedRowsInsideColumn()
+			//MyNestedScroll()
+
 		}
 	}
 }
