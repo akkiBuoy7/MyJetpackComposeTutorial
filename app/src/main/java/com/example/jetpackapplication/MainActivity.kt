@@ -48,6 +48,7 @@ import com.example.jetpackapplication.basics.dropdown.MyDropdown
 import com.example.jetpackapplication.basics.item_selection.nav.SetupItemSelectionNavGraph
 import com.example.jetpackapplication.basics.layouts.nested_scroll.VerticalHorizontalScroll
 import com.example.jetpackapplication.basics.layouts.nested_scroll.nested_rows.NestedRowsInsideColumn
+import com.example.jetpackapplication.basics.search_view.MySearchView
 import com.example.jetpackapplication.ui.theme.JetpackApplicationTheme
 
 const val TAG = "MyJetpack"
@@ -165,8 +166,9 @@ class MainActivity : ComponentActivity() {
 			//NestedRowsInsideColumn()
 			//MyNestedScroll()
 			//MyDropdown()
-			MyModalBottomSheet()
-			ScaffoldBottomSheet()
+//			MyModalBottomSheet()
+//			ScaffoldBottomSheet()
+			MySearchView()
 
 		}
 	}
